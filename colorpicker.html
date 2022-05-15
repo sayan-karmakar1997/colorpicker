@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>colorpicker</title>
+</head>
+<style>
+	.container{
+		position: absolute;
+		margin-left: 50px;
+		margin-top: 20px;
+		background-color: red;
+		height: 220px;
+		width: 150px;
+		border-style: solid;
+		border-color: #d9b2b2;
+		}
+	.color{
+		background-color: yellow;
+		height: 50px;
+		border-style: solid;
+		}
+	#hex{
+		height: 20px;
+		background-color: blue;
+		border-style: solid;
+		}
+	#rgb{
+		position: absolute;
+		height: 20px;
+		background-color: green;
+		border-style: solid;
+	}
+	#forR{
+		width: 50px;
+		background-color: #a3c9ad;
+		height: 20px;
+	}
+	#forG{
+		position: relative;
+		width: 50px;
+		background-color: #a3c9b9;
+		
+		margin-left: 50px;
+	}
+</style>
+<body>
+<div class="container">
+	<div class="color">
+		<span>Color</spn>
+	</div>
+
+		<div>
+			<input type="range" min="0" max="255" value="0" oninput="rValue(this.value)" id="rSlider">
+			<br>
+			<input type="range" min="0" max="255" value="0" oninput="gValue(this.value)" id="gSlaider">
+			<br>
+			<input type="range" min="0" max="255" value="0" oninput="bValue(this.value)" id="bSlider">
+		</div>
+		
+			<div id="hex">
+				<h4>HEX</h4>
+			</div>
+			<br>
+			
+				<div id="rgb">
+					
+					<div id="forR"></div>
+					<div id="forG"></div>
+					<div id="forB"></div>
+				</div
+</div>
+<script>
+	var r
+	function rValue(r){
+	document.getElementById("forR").innerHTML=r;	
+	}
+var g
+	function gValue(g){
+	document.getElementById("forG").innerHTML=g;	
+	}
+var b
+	function bValue(b){
+	document.getElementById("forB").innerHTML=b;	
+	}
+</script>
+
+</body>
+</html>
