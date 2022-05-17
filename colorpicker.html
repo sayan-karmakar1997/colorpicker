@@ -8,66 +8,120 @@
 		position: absolute;
 		margin-left: 50px;
 		margin-top: 20px;
-		background-color: red;
+		background-color: rgb(206, 206, 206);
 		height: 220px;
 		width: 150px;
 		border-style: solid;
-		border-color: #d9b2b2;
+		border-color: #fa8888;
+        border-radius: 10px;
+        margin-left: 550px;
+        margin-top: 180px;
 		}
 	.color{
-		background-color: yellow;
+		background-color: rgb(253, 253, 253);
 		height: 50px;
 		border-style: solid;
+        border-color: #696969;
+        border-radius: 10px;
 		}
 	#hex{
 		height: 20px;
-		background-color: blue;
+		background-color: rgb(219, 219, 253);
 		border-style: solid;
+        border-radius: 10px;
+        border-color: #696969;
 		}
 	#rgb{
-		position: absolute;
 		height: 20px;
-		background-color: green;
+		background-color: rgb(219, 219, 253);
 		border-style: solid;
-	}
-	#forR{
-		width: 50px;
-		background-color: #a3c9ad;
-		height: 20px;
-	}
-	#forG{
-		position: relative;
-		width: 50px;
-		background-color: #a3c9b9;
-		
-		margin-left: 50px;
-	}
+        border-radius: 10px;
+        border-color: #696969;
+    }
+    #forR{
+        position:absolute;
+        height: 20px;
+        width: 45px;
+        background-color: rgb(255, 161, 174);
+        border-radius: 10px;
+        
+    }
+    
+    #forG{
+        position:absolute;
+        height: 20px;
+        width: 45px;
+        background-color: rgb(152, 245, 149);
+        margin-left: 50px;
+        border-radius: 10px;
+       
+    }   
+    
+    #forB{
+        position:absolute;
+        height: 20px;
+        width: 45px;
+        background-color: rgb(189, 199, 255);
+        margin-left: 100px; 
+        border-radius: 10px;
+        
+    }  
+    
+    #scroll{
+        margin-left: 10px;
+    }
+    #hrgb{
+        margin-left: 60px;
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        font-size: 15px;
+        letter-spacing: -0.2px;
+        word-spacing: -0.2px;
+        color: #666666;
+        font-weight: 700;
+        text-decoration: none solid rgb(68, 68, 68);
+        font-style: italic;
+        font-variant: normal;
+        text-transform: uppercase;
+    }
+    #hex_code{
+        margin-left: 38px;
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        font-size: 15px;
+        letter-spacing: -0.2px;
+        word-spacing: -0.2px;
+        color: #666666;
+        font-weight: 700;
+        text-decoration: none solid rgb(68, 68, 68);
+        font-style: italic;
+        font-variant: normal;
+        text-transform: uppercase;  
+    }
+  
+	
 </style>
 <body>
 <div class="container">
+   
 	<div class="color">
 		<span>Color</spn>
-	</div>
+    </div>
 
-		<div>
+		<div id="scroll">
 			<input type="range" min="0" max="255" value="0" oninput="rValue(this.value)" id="rSlider">
 			<br>
 			<input type="range" min="0" max="255" value="0" oninput="gValue(this.value)" id="gSlaider">
 			<br>
 			<input type="range" min="0" max="255" value="0" oninput="bValue(this.value)" id="bSlider">
 		</div>
-		
-			<div id="hex">
-				<h4>HEX</h4>
-			</div>
-			<br>
-			
-				<div id="rgb">
-					
+            <span id="hex_code">Hex-Code</span>
+			<div id="hex"></div>
+            <span id="hrgb">RGB</span>
+		        <div id="rgb">
 					<div id="forR"></div>
 					<div id="forG"></div>
 					<div id="forB"></div>
-				</div
+                </div>
+    
 </div>
 <script>
 	var r
