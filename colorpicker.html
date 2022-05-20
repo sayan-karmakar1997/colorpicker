@@ -6,16 +6,14 @@
 <style>
 	.container{
 		position: absolute;
-		margin-left: 50px;
-		margin-top: 20px;
 		background-color: rgb(206, 206, 206);
-		height: 220px;
+		height: 300px;
 		width: 150px;
 		border-style: solid;
 		border-color: #fa8888;
         border-radius: 10px;
         margin-left: 550px;
-        margin-top: 180px;
+        margin-top: 140px;
 		}
 	.color{
 		background-color: rgb(253, 253, 253);
@@ -96,7 +94,72 @@
         font-variant: normal;
         text-transform: uppercase;  
     }
-  
+    #red{
+        margin-left: 50px;
+        font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+        font-size: 13px;
+        letter-spacing: 2px;
+        word-spacing: 2px;
+        color: #ff2b2b;
+        font-weight: normal;
+        text-decoration: none;
+        font-style: normal;
+        font-variant: normal;
+        text-transform: none;
+    }
+    #green{
+        margin-left: 40px;
+        font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+        font-size: 13px;
+        letter-spacing: 2px;
+        word-spacing: 2px;
+        color: #0f9c39;
+        font-weight: normal;
+        text-decoration: none;
+        font-style: normal;
+        font-variant: normal;
+        text-transform: none;
+    }
+    #blue{
+        margin-left: 45px;
+        font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+        font-size: 13px;
+        letter-spacing: 2px;
+        word-spacing: 2px;
+        color: #4a4dff;
+        font-weight: normal;
+        text-decoration: none;
+        font-style: normal;
+        font-variant: normal;
+        text-transform: none;    
+    }
+    #hexForR{
+        position:absolute;
+        height: 20px;
+        width: 45px;
+        background-color: rgb(255, 161, 174);
+        border-radius: 10px;
+        
+    }
+    #hexForG{
+        position:absolute;
+        height: 20px;
+        width: 45px;
+        background-color: rgb(152, 245, 149);
+        margin-left: 50px;
+        border-radius: 10px;
+       
+    } 
+    #hexForB{
+        position:absolute;
+        height: 20px;
+        width: 45px;
+        background-color: rgb(189, 199, 255);
+        margin-left: 100px; 
+        border-radius: 10px;
+        
+    }    
+    
 	
 </style>
 <body>
@@ -107,14 +170,28 @@
     </div>
 
 		<div id="scroll">
+            <div>
+                <span id="red">RED</span>
 			<input type="range" min="0" max="255" value="0" oninput="rValue(this.value)" id="rSlider">
-			<br>
+            </div>
+		
+            <div>
+                <span id="green">GREEN</span>
 			<input type="range" min="0" max="255" value="0" oninput="gValue(this.value)" id="gSlaider">
-			<br>
+            </div>
+		
+            <div>
+                <span id="blue">BLUE</span>
 			<input type="range" min="0" max="255" value="0" oninput="bValue(this.value)" id="bSlider">
+            </div>
 		</div>
             <span id="hex_code">Hex-Code</span>
-			<div id="hex"></div>
+			<div id="hex" >
+                    
+                    <div id="hexForR"></div>
+					<div id="hexForG"></div>
+					<div id="hexForB"></div>
+            </div>
             <span id="hrgb">RGB</span>
 		        <div id="rgb">
 					<div id="forR"></div>
@@ -124,18 +201,31 @@
     
 </div>
 <script>
-	var r
+	var r = red
 	function rValue(r){
-	document.getElementById("forR").innerHTML=r;	
+	document.getElementById("forR").innerHTML=r;
+    r = parseInt(r).toString(16);
+    document.getElementById("hexForR").innerHTML=r;	
 	}
-var g
+    var g = green
 	function gValue(g){
-	document.getElementById("forG").innerHTML=g;	
+	document.getElementById("forG").innerHTML=g;
+    g = parseInt(g).toString(16);
+    document.getElementById("hexForG").innerHTML=g;	
 	}
-var b
+    var b = blue.value
 	function bValue(b){
-	document.getElementById("forB").innerHTML=b;	
-	}
+	document.getElementById("forB").innerHTML=b;
+    b = parseInt(b).toString(16);
+    document.getElementById("hexForB").innerHTML=b;	
+    }
+  
+    
+            
+
+
+    
+    
 </script>
 
 </body>
