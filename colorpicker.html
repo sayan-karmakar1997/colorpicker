@@ -165,7 +165,7 @@
 <body>
 <div class="container">
    
-	<div class="color">
+	<div class="color" id="color">
 		<span>Color</spn>
     </div>
 
@@ -201,31 +201,35 @@
     
 </div>
 <script>
-	var r = red
-	function rValue(r){
-	document.getElementById("forR").innerHTML=r;
-    r = parseInt(r).toString(16);
-    document.getElementById("hexForR").innerHTML=r;	
+	var r = 0
+    var g = 0
+    var b = 0
+	///////////////////////////
+	function rValue(red){
+		r=red
+		document.getElementById("forR").innerHTML=r;
+		var hr = parseInt(red).toString(16);
+		document.getElementById("hexForR").innerHTML=hr;	
+		updateColor()
 	}
-    var g = green
-	function gValue(g){
-	document.getElementById("forG").innerHTML=g;
-    g = parseInt(g).toString(16);
-    document.getElementById("hexForG").innerHTML=g;	
+	function gValue(green){
+		g=green
+		document.getElementById("forG").innerHTML=g;
+		var hg = parseInt(green).toString(16);
+		document.getElementById("hexForG").innerHTML=hg;
+		updateColor()
 	}
-    var b = blue.value
-	function bValue(b){
-	document.getElementById("forB").innerHTML=b;
-    b = parseInt(b).toString(16);
-    document.getElementById("hexForB").innerHTML=b;	
-    }
-  
-    
-            
-
-
-    
-    
+	function bValue(blue){
+		b=blue
+		document.getElementById("forB").innerHTML=b;
+		var hb = parseInt(blue).toString(16);
+		document.getElementById("hexForB").innerHTML=hb;	
+		updateColor()
+    }   
+	function updateColor(){
+		var color = "rgb("+r+", "+g+", "+b+")"
+		document.getElementById("color").style.backgroundColor = color; 
+	} 
 </script>
 
 </body>
